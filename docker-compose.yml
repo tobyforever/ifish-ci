@@ -10,16 +10,16 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=2zhlmcl@1hblsqt
       - MYSQL_DATABASE=ifish
-  # ifish-api:
-  #   build: .
-  #   ports:
-  #     - "8080:8080"
-  #   volumes:
-  #     - .:/code
-  #     - logvolume01:/var/log
-  #   links:
-  #     - ifish-db
-  #     - .:/code
+  ifish-api:
+    depends_on:
+      - ifish-db
+    build: ./ifish-api
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data/log:/var/log
+    links:
+      - ifish-db
   
 
 
