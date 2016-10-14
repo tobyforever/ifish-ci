@@ -1,5 +1,5 @@
- version: '2'
- services:
+version: '2'
+services:
   ifish-db:
     image: mysql:5.5
     ports:
