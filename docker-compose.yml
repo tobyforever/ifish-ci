@@ -1,0 +1,25 @@
+version: '2'
+services:
+  ifish-db:
+    image: mysql:5.5
+    ports:
+      - "13306:3306"
+    restart: always
+    volumes:
+      - ./data/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=2zhlmcl@1hblsqt
+      - MYSQL_DATABASE=ifish
+  # ifish-api:
+  #   build: .
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - .:/code
+  #     - logvolume01:/var/log
+  #   links:
+  #     - ifish-db
+  #     - .:/code
+  
+
+
