@@ -32,6 +32,11 @@ services:
     depends_on:
       - ifish-api
     build: ./ifish-fe
+    volumes:
+      # 注意./路径是相对compose.yml的，如果没有./则是代表docker内部自动生成的data volume
+      - ./ifish-fe/dist-fe-ui:/usr/share/nginx/html
+      - ./ifish-fe/dist-fe-admin:/usr/share/nginx/html/admin
+      - ./ifish-fe/ifishimage:/usr/share/nginx/ifishimage
     ports:
       - "8123:80"
     links:
