@@ -3,3 +3,4 @@ logs
 *.log
 ifish-fe/dist-fe-admin
 ifish-fe/dist-fe-ui
+ifish-fe/ifishimage
